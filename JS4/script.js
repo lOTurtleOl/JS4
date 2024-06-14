@@ -3,20 +3,20 @@ let ages = [3, 9, 23, 64, 2, 8, 28, 93];
 ages[ages.length - 1] - ages[0];
 console.log(ages);
 // b
-ages.push(34);
-console.log(ages);
+ages.push(34); //add 34 to array
+console.log(ages); //print to console
 // c
-sum = 0;
-for (let i = 0; i < ages.length; i++) {
+sum = 0; //set variable sum
+for (let i = 0; i < ages.length; i++) { //iterate through array and add each index to current sum
     sum += ages[i];
 }
 avg = sum / ages.length;
 console.log(avg)
 
 // Question 2 - a
-let names = ['Sam', 'Tommy', 'Tim', 'Sally', 'Buck', 'Bob']
+let names = ['Sam', 'Tommy', 'Tim', 'Sally', 'Buck', 'Bob'] // names array
 let avghold = 0
-for (let index = 0; index < names.length; index++) {
+for (let index = 0; index < names.length; index++) { // iterate through array and find average length of names
     avghold += names[index].length;
 }
 let average = avghold / names.length;
@@ -24,7 +24,7 @@ console.log(average);
 
 
 // Question 2 - b
-let concatstr = `Names: `;
+let concatstr = `Names: `; // concatonate names together separated properly
 for (let index = 0; index < names.length; index++) {
     if (index == names.length - 1) {
         concatstr += `${names[index]}.`
@@ -37,20 +37,20 @@ console.log(concatstr);
 
 
 // Question 3
-console.log("You would call array.length - 1");
+console.log("You would call array.length - 1"); // This was just log the answer
 
 // Question 4
-console.log('You would call index 0');
+console.log('You would call index 0');// This was just log the answer
 
 // Question 5
-let nameLengths = [];
-for (let i = 0; i < names.length; i++) {
+let nameLengths = []; // initialize array
+for (let i = 0; i < names.length; i++) { // iterate through previous names array and create an array using the length of the names
     nameLengths.push(names[i].length);
 }
 console.log(nameLengths);
 
 // Question 6
-let sum6 = 0;
+let sum6 = 0; // iterate through array adding the lengths together
 for (let index = 0; index < nameLengths.length; index++) {
     sum6 += nameLengths[index];
 
@@ -58,7 +58,7 @@ for (let index = 0; index < nameLengths.length; index++) {
 console.log(sum6);
 
 // Question 7
-function bunchWord(word, n) {
+function bunchWord(word, n) { // iterate and bunch a word together a set number of times
     let bunch = word;
     for (let index = 1; index < n; index++) {
         bunch += word;
@@ -69,14 +69,14 @@ function bunchWord(word, n) {
 console.log(bunchWord('Hello', 4));
 
 // Question 8
-function fullName(firstName, lastName) {
+function fullName(firstName, lastName) { // create fullName function by concatonating first and last
     let fullName = `${firstName} ${lastName}`;
     return fullName;
 }
 console.log(fullName('Andrew', 'Hughes'));
 
 // Question 9
-function bool100(array) {
+function bool100(array) { //check if the sum of an array of numbers is over 100
     let sumArr = 0;
     for (let index = 0; index < array.length; index++) {
         sumArr += array[index];
@@ -92,20 +92,20 @@ console.log(bool100([2, 5, 90, 4])); //over 100, returns true
 console.log(bool100([34, 5])); //under 100, returns false
 
 // Question 10
-function arrNumbers(array) {
+function arrNumbers(array) { // accepts number array and returns average
     totalAvg = 0;
     tempSum10 = 0;
-    for (let index = 0; index < array.length; index++) {
+    for (let index = 0; index < array.length; index++) { // set variables above, iterate and add to sum
         tempSum10 += array[index];
 
     }
-    totalAvg = tempSum10 / array.length;
+    totalAvg = tempSum10 / array.length; //calculate average
     return totalAvg;
 }
-console.log(arrNumbers([4, 4, 50, 32, 2]))
+console.log(arrNumbers([4, 4, 50, 32, 2])) // log to console
 
 // Question 11
-function twoArray(array1, array2) {
+function twoArray(array1, array2) { // calculate averages of two arrays of numbers and check to see if array 1 is greater than array 2
     tempSum1 = 0;
     for (let index = 0; index < array1.length; index++) {
         tempSum1 += array1[index];
@@ -129,7 +129,7 @@ function twoArray(array1, array2) {
 console.log(twoArray([3, 5, 10, 2], [4, 4, 4, 4]));
 
 // Question 12
-function willBuyDrink(isHotOutside, moneyInPocket) {
+function willBuyDrink(isHotOutside, moneyInPocket) { //Function, if it's hot out AND you have enough money, return true
     if (isHotOutside == true && moneyInPocket > 10.50) {
         return true;
     } else {
