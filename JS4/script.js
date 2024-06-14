@@ -161,11 +161,44 @@ function stringAnalysis(stringArray) {
 //log example to console
 console.log(stringAnalysis(['String', 'Array', 'Let"s see if this works']));
 
-// Question 13-2 - Create a function for an e-commerce platform that analyzes customer orders
-orders = [
-    {orderName = 'Laptop'}
-]
-function ordersArray(orders) {
-    let newOrders = [];
+
+
+// Question 13-2 - Create a function for an e-commerce platform that collects customer orders
+function collectOrders() {
+    let orders = []; // initialize orders array
     
+    let addOrder = true; // set addOrder to true
+    while (addOrder) { //while addOrder is true, run while loop
+        let orderName = prompt('Enter product name: \n'); //set variables to be used as properties based on user input
+        let orderPrice = parseFloat(prompt('Enter product price: \n'));
+        let orderQuantity = parseInt(prompt('Enter quantity: \n'));
+
+        // Create order object using above variables as properties
+        let order = {orderName: orderName, orderPrice: orderPrice, orderQuantity: orderQuantity };
+        orders.push(order); // Push orders to array
+
+        // Ask user if they have more orders, return true or false
+        addOrder = confirm("Do you want to add another order?")
+
+    }
+
+    return orders; // return complete orders array
 }
+
+function processOrders(orders) { // create function to process orders and return total price
+    return orders.map(order => { // return results of an arrow function which iterates over every element in orders array
+        let totalPrice = order.orderPrice * order.orderQuantity; // calculate totalPrice
+
+        //Create a new object for each order
+        return {
+            orderName: order.orderName,
+            orderPrice: order.orderPrice,
+            orderQuantity: order. orderQuantity,
+            totalPrice: totalPrice
+        }
+    })
+}
+
+let orders = collectOrders(); //Runs collectOrders and stores user input in orders array
+let processedOrders = processOrders(orders); //runs processOrders using the returned orders array and returns a new array called processedOrders()
+console.log(processedOrders); //prints processedOrders array to the console
