@@ -1,4 +1,4 @@
-// Question 1 - a
+// Question 1 - a - initialize array, subtract first index from last
 let ages = [3, 9, 23, 64, 2, 8, 28, 93];
 ages[ages.length - 1] - ages[0];
 console.log(ages);
@@ -15,9 +15,25 @@ console.log(avg)
 
 // Question 2 - a
 let names = ['Sam', 'Tommy', 'Tim', 'Sally', 'Buck', 'Bob']
-names.forEach(element => {
-    console.log(element);
-});
+let avghold = 0
+for (let index = 0; index < names.length; index++) {
+    avghold += names[index].length;    
+}
+let average = avghold / names.length;
+console.log(average);
+
+
+// Question 2 - b
+let concatstr = `Names: `;
+for (let index = 0; index < names.length; index++) {
+    if (index == names.length - 1) {
+        concatstr += `${names[index]}.`
+    } else {
+        concatstr += `${names[index]}, `
+    }
+}
+    
+console.log(concatstr);
 
 
 // Question 3
